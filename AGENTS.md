@@ -29,8 +29,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 
 ## 3. Design and Implement
 
-- Choose the smallest complete solution that meets current requirements, balancing correctness, complexity, performance, and maintenance cost. New mechanisms should be justified by specific consumers, explicit contracts, or credible failure scenarios.
-- Prefer reusing or extending existing implementations and extension boundaries. Before adding configuration options, general-purpose frameworks, or optional mechanisms, confirm that they serve current requirements; do not add burdens for hypothetical future needs.
+- Prefer reusing or extending existing implementations and extension boundaries to deliver the smallest complete solution for current requirements, balancing correctness, complexity, performance, and maintenance cost. New configuration options, frameworks, or other mechanisms should serve current requirements and be justified by specific consumers, explicit contracts, or credible failure scenarios.
 - Give each responsibility and authoritative state a clear owner. Callers work through that owner's interfaces; adapters translate contracts, and caches and derived views have explicit update and invalidation mechanisms.
 - Decide whether to extract an abstraction based on clear responsibility, complex boundaries, readability, and actual reuse. A meaningful function may have a single call site; omit wrappers that merely forward calls, rename things redundantly, or add indirection.
 - Preserve accurate types and valid-state constraints. Validate unknown external data at the boundary responsible for it, then rely on the established contracts internally. When fixing type or static-analysis issues, correct the actual contract or unsafe operation instead of hiding the problem with widened types, type assertions, or disabled checks.
@@ -42,8 +41,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 
 ## 4. Change Scope, Contracts, and Migrations
 
-- Every change should trace back to the task's goal, a necessary fix, or a requirement for a complete migration. Keep changes focused and avoid unrelated refactoring, formatting, or cleanup of pre-existing issues.
-- The smallest complete change includes all necessary affected parts: implementation, callers, tests, contracts, and documentation. Record or report unrelated issues without automatically expanding the task.
+- Every change should serve the task's goal, a necessary fix, or a complete migration and cover all necessary implementation, callers, tests, contracts, and documentation. Record or report unrelated issues without adding unrelated refactoring, formatting, or cleanup of pre-existing issues.
 - Remove code, imports, and artifacts made obsolete by this change; preserve existing work unrelated to the task. After replacing an implementation, verify that old paths are removed, unreachable, or retained for an explicit reason.
 - When refactoring, porting, replacing an execution path, or changing input routing, branch order, or defaults, check the affected prior behavior: accepted inputs, configuration and environment variables, defaults, fallbacks, error handling, and side effects. Identify which existing inputs newly added or moved-earlier conditions will match, and account for each prior behavior as preserved, migrated, or changed with authorization; an undeclared loss of behavior is a regression.
 - Distinguish internal implementation details from existing compatibility commitments. Changes to public interfaces, persisted data, user configuration, or released behavior require identifying consumers and upgrade impact; internal implementations need not retain compatibility layers indefinitely for hypothetical consumers with no supporting evidence.
@@ -76,7 +74,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 ## 7. Security, Privacy, and Runtime State
 
 - Use the minimum permissions, data, and environment scope needed for the task. Security measures should address concrete risks and explain necessary tradeoffs; avoid masking defects by removing normal capabilities.
-- Protect credentials, personal information, private configuration, and internal identifiers. Prefer synthetic data in tests and examples; inspect content before committing, sharing, uploading, or sending it. Logs should contain only information needed for diagnosis and protect sensitive fields.
+- Protect credentials, personal information, private configuration, and internal identifiers. Prefer synthetic data in tests and examples; use synthetic or sanitized data in screenshots or recordings. Inspect content before committing, sharing, uploading, or sending it. Logs should contain only information needed for diagnosis and protect sensitive fields.
 - Run untrusted code with appropriate isolation and restricted credentials, keeping tests away from unrelated private files, production data, and services.
 - Use isolated state, ports, and temporary resources for testing and debugging. Before changing or stopping processes, services, or live state you did not create, confirm task authorization and impact.
 - Before operations involving deletion, overwriting, or irreversible migration, confirm the target, impact, and available recovery methods; protect data outside the task's scope.
@@ -94,7 +92,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 - For changes involving builds, packaging, installation methods, or platform differences, check the relevant resources, registrations, and delivery manifests, and verify against the target artifact or runtime environment. Passing only in development or simulated environments is insufficient to establish correctness at these boundaries.
 - When tests fail, first distinguish implementation defects, contract changes, test problems, environment problems, and pre-existing failures. Correct tests according to the contract when their expectations conflict with a confirmed contract or the contract has changed with authorization; fix the implementation when it violates a still-valid contract. Inspect the actual meaning of the diff before updating snapshots or baselines.
 - Do not hide failures by skipping tests, weakening assertions, expanding ignore rules, or relaxing checks. Support claims about unrelated pre-existing problems with evidence and report them honestly; address problems introduced by this task and unmet required checks, or explicitly report the blockage.
-- For UI and interaction changes, inspect the actual presentation and key states, checking different sizes, input methods, and accessibility as needed. Use synthetic or sanitized data in screenshots or recordings.
+- For UI and interaction changes, inspect the actual presentation and key states, checking different sizes, input methods, and accessibility as needed.
 - Associate verification results with the implementation version, environment, and scope that were checked. Reverify affected parts when code or environment changes invalidate prior evidence; valid evidence can be reused, and every additional check should address a named unknown, risk, or required condition.
 
 ## 9. Self-Review and Code Review
@@ -104,7 +102,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 - Each finding should state its triggering conditions, impact, evidence location, and severity. Prioritize problems users may not notice, such as silent data loss, ignored configuration, or incorrect authorization, while judging severity by actual impact.
 - Find all instances of the same issue class in one pass whenever possible and report them together. Re-reviews should focus on new changes and fixes to earlier findings, verifying that the problems are actually gone rather than repeatedly raising resolved or unchanged findings.
 - Verify automated checks and other reviewers' opinions. Fix real problems; when disagreeing, provide evidence and reasons. Required project review and merge conditions still apply.
-- If self-review reveals unnecessary complexity or scope expansion, simplify without breaking verified behavior; do not use self-review as an opportunity for unrelated refactoring.
+- If self-review reveals unnecessary complexity or scope expansion, simplify without breaking verified behavior.
 
 ## 10. Parallel Collaboration and Recovery
 
@@ -121,8 +119,7 @@ Apply the workflow according to the task's complexity, impact, and risk. Simple 
 - When clarification or authorization is needed, explain what is missing and its impact. If only a later operation needs authorization, first complete authorized preparation that does not depend on that decision, present a reviewable target, content, and impact, and pause only the restricted operation. If the restriction comes from project instructions, a skill, or tool approval, identify the exact source and distinguish explicit requirements from your interpretation.
 - During closeout, remove temporary resources you created that are no longer needed, retain deliverables, necessary evidence, and recovery materials, and confirm that cleanup will not affect the user or other tasks.
 - Finish when the target behavior is established, required checks and reviews are complete, and delivery and relevant external outcomes have been verified. Do not extend the task indefinitely for optional polish, repeated proof, or speculative expansion.
-- If completion is not possible, clearly distinguish completed work, unfinished work, specific obstacles, and the conditions needed to proceed. Preserve a resumable state rather than describing attempts, partial results, or environment failures as success.
-- The final response should state the delivered result, key changes, actual verification, and important limitations. Provide necessary file or result locations; distinguish passed, unrun, and failed checks, and avoid overstating the outcome.
+- The final response should state the result, key changes, file or result locations, actual verification, and important limitations; distinguish passed, unrun, and failed checks. If incomplete, distinguish completed and remaining work, specific obstacles, and conditions needed to proceed, and preserve a resumable state. Do not describe attempts, partial results, or environment failures as completion.
 
 ## 12. Maintain Project Instructions
 
