@@ -23,16 +23,16 @@
 
 ## 六份参考来源
 
-本指南依据下表链接的本地参考副本综合整理。这些文件是用于对比的快照，上游文档可能已在收集后发生变化。每个参考目录均包含英文文档和中文译文。
+本指南依据下表链接的参考快照综合整理，这些快照保存在 Git 历史中。`ref/` 目录已不再跟踪。上游文档可能已在收集后发生变化。每份参考均包含英文文档和中文译文。
 
-| 参考 | 本地文档 | 上游 | 主要借鉴内容 |
+| 参考 | 历史文档 | 上游 | 主要借鉴内容 |
 | --- | --- | --- | --- |
-| Karpathy 风格指南 | [English](ref/karpathy/AGENTS.md) · [中文](ref/karpathy/AGENTS.zh-CN.md) | 未记录原始上游地址 | 明确假设、聚焦改动、避免不必要的复杂度，以及可验证的目标 |
-| OpenCode | [English](ref/opencode/AGENTS.md) · [中文](ref/opencode/AGENTS.zh-CN.md) | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 在负责的边界校验、有意义的抽象、生成产物，以及验证真实实现的测试 |
-| Pi | [English](ref/pi/AGENTS.md) · [中文](ref/pi/AGENTS.zh-CN.md) | [earendil-works/pi](https://github.com/earendil-works/pi) | 共享工作区保护、精确暂存、依赖与安装安全，以及具体清楚的沟通 |
-| Kimi Code | [English](ref/kimi-code/AGENTS.md) · [中文](ref/kimi-code/AGENTS.zh-CN.md) | [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code) | 行为清单、消费者与兼容性检查、提示词即行为，以及有明确范围的审查 |
-| Hermes | [English](ref/hermes/AGENTS.md) · [中文](ref/hermes/AGENTS.zh-CN.md) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 核实原始设计意图、行为契约测试，以及局部指令导航 |
-| OpenClaw | [English](ref/openclaw/AGENTS.md) · [中文](ref/openclaw/AGENTS.zh-CN.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 授权范围内的执行与恢复、明确职责归属、完整迁移、有效验证，以及停止条件 |
+| Karpathy 风格指南 | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/karpathy/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/karpathy/AGENTS.zh-CN.md) | 未记录原始上游地址 | 明确假设、聚焦改动、避免不必要的复杂度，以及可验证的目标 |
+| OpenCode | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/opencode/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/opencode/AGENTS.zh-CN.md) | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 在负责的边界校验、有意义的抽象、生成产物，以及验证真实实现的测试 |
+| Pi | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/pi/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/pi/AGENTS.zh-CN.md) | [earendil-works/pi](https://github.com/earendil-works/pi) | 共享工作区保护、精确暂存、依赖与安装安全，以及具体清楚的沟通 |
+| Kimi Code | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/kimi-code/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/kimi-code/AGENTS.zh-CN.md) | [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code) | 行为清单、消费者与兼容性检查、提示词即行为，以及有明确范围的审查 |
+| Hermes | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/hermes/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/hermes/AGENTS.zh-CN.md) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 核实原始设计意图、行为契约测试，以及局部指令导航 |
+| OpenClaw | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/openclaw/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/openclaw/AGENTS.zh-CN.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 授权范围内的执行与恢复、明确职责归属、完整迁移、有效验证，以及停止条件 |
 
 “Karpathy 风格”用于标识本集合中的这份本地参考，仓库尚未记录其原始上游地址。[useless/](useless/) 中的早期参考不属于当前综合整理所采用的六份来源。
 
@@ -80,7 +80,7 @@
 | [AGENTS.md](AGENTS.md) | 英文通用指南 |
 | [AGENTS.zh-CN.md](AGENTS.zh-CN.md) | 对应中文指南 |
 | [README.md](README.md)、[README.zh-CN.md](README.zh-CN.md) | 中英文项目介绍与使用说明 |
-| [ref/](ref/) | 来源快照及其中文译文 |
+| [ref/](https://github.com/HaroldHuanrongLIU/AGENTS.md/tree/0b011181806c16e909106b76df0f0e0294bade14/ref) | 历史来源快照及其中文译文，不包含在新克隆的工作区中 |
 | [useless/](useless/) | 未纳入当前综合整理的早期参考 |
 
 ## 文档维护
