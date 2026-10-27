@@ -27,12 +27,12 @@ The synthesis is based on the local reference copies linked below. These are sna
 
 | Reference | Local documents | Upstream | Main contributions |
 | --- | --- | --- | --- |
-| Karpathy-style guidelines | [English](karpathy/AGENTS.md) · [中文](karpathy/AGENTS.zh-CN.md) | Original upstream URL not recorded | Explicit assumptions, focused changes, avoiding unnecessary complexity, and verifiable goals |
-| OpenCode | [English](opencode/AGENTS.md) · [中文](opencode/AGENTS.zh-CN.md) | [anomalyco/opencode](https://github.com/anomalyco/opencode) | Validation at the owning boundary, meaningful abstractions, generated outputs, and tests of real implementations |
-| Pi | [English](pi/AGENTS.md) · [中文](pi/AGENTS.zh-CN.md) | [earendil-works/pi](https://github.com/earendil-works/pi) | Shared-workspace protection, precise staging, dependency and installation safety, and concrete communication |
-| Kimi Code | [English](kimi-code/AGENTS.md) · [中文](kimi-code/AGENTS.zh-CN.md) | [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code) | Behavior inventories, consumer and compatibility checks, prompts as behavior, and scoped reviews |
-| Hermes | [English](hermes/AGENTS.md) · [中文](hermes/AGENTS.zh-CN.md) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | Checking original design intent, behavior-contract tests, and routing to local instructions |
-| OpenClaw | [English](openclaw/AGENTS.md) · [中文](openclaw/AGENTS.zh-CN.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | Authorized execution and recovery, clear ownership, complete migrations, effective verification, and stopping conditions |
+| Karpathy-style guidelines | [English](ref/karpathy/AGENTS.md) · [中文](ref/karpathy/AGENTS.zh-CN.md) | Original upstream URL not recorded | Explicit assumptions, focused changes, avoiding unnecessary complexity, and verifiable goals |
+| OpenCode | [English](ref/opencode/AGENTS.md) · [中文](ref/opencode/AGENTS.zh-CN.md) | [anomalyco/opencode](https://github.com/anomalyco/opencode) | Validation at the owning boundary, meaningful abstractions, generated outputs, and tests of real implementations |
+| Pi | [English](ref/pi/AGENTS.md) · [中文](ref/pi/AGENTS.zh-CN.md) | [earendil-works/pi](https://github.com/earendil-works/pi) | Shared-workspace protection, precise staging, dependency and installation safety, and concrete communication |
+| Kimi Code | [English](ref/kimi-code/AGENTS.md) · [中文](ref/kimi-code/AGENTS.zh-CN.md) | [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code) | Behavior inventories, consumer and compatibility checks, prompts as behavior, and scoped reviews |
+| Hermes | [English](ref/hermes/AGENTS.md) · [中文](ref/hermes/AGENTS.zh-CN.md) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | Checking original design intent, behavior-contract tests, and routing to local instructions |
+| OpenClaw | [English](ref/openclaw/AGENTS.md) · [中文](ref/openclaw/AGENTS.zh-CN.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | Authorized execution and recovery, clear ownership, complete migrations, effective verification, and stopping conditions |
 
 “Karpathy-style” identifies the local reference in this collection; its original upstream URL is not recorded here. Earlier references under [useless/](useless/) are excluded from the current six-source synthesis.
 
@@ -80,7 +80,7 @@ Start with a small task and check whether the agent identifies the intended resu
 | [AGENTS.md](AGENTS.md) | General guide in English |
 | [AGENTS.zh-CN.md](AGENTS.zh-CN.md) | Equivalent Chinese guide |
 | [README.md](README.md), [README.zh-CN.md](README.zh-CN.md) | Project introduction and usage in both languages |
-| Six reference directories listed above | Source snapshots and their Chinese translations |
+| [ref/](ref/) | Source snapshots and their Chinese translations |
 | [useless/](useless/) | Earlier references excluded from the current synthesis |
 
 ## Maintaining the documents
