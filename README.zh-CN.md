@@ -2,7 +2,7 @@
 
 [English](README.md) | 简体中文
 
-一套综合六份参考文档整理的、可复用的 coding agent 工程指南。以通用性和全面性优先，并明确各项流程的适用条件。
+一套结合公开 agent 指令与工程实践整理的、可复用的 coding agent 工程指南。以通用性和全面性优先，并明确各项流程的适用条件。
 
 英文指南见 [AGENTS.md](AGENTS.md)，对应中文版见 [AGENTS.zh-CN.md](AGENTS.zh-CN.md)。指南覆盖实现、调试、重构、审查、文档及相关工程工作，帮助 agent 澄清会影响结果的重要歧义、保护已有工作和行为、遵守授权范围，并以证据支持完成结论。
 
@@ -13,7 +13,7 @@
 | 章节 | 内容 |
 | --- | --- |
 | 1–2 | 任务范围、授权、上下文调查与计划 |
-| 3–4 | 设计、实现、改动范围、契约与迁移 |
+| 3–4 | 设计、实现、适度防御性编程、改动范围、契约与迁移 |
 | 5–7 | 工作区保护、版本控制、依赖、工具、安全与隐私 |
 | 8–9 | 验证、失败诊断、自查与代码审查 |
 | 10–11 | 并行协作、恢复、沟通与完成条件 |
@@ -26,6 +26,7 @@
 1. **改动聚焦且完整。** 避免无关修改，同时覆盖必要的调用方、契约、测试和文档。
 2. **以有效验证支持完成结论。** 检查必须能证明目标行为成立。
 3. **尊重授权并保护已有工作。** 操作应在获准范围内，保留用户和协作者的已有改动。
+4. **减少无依据的防御代码。** 防护机制以当前契约或可信的可达失败路径为依据，保留必要的安全、数据完整性、恢复、兼容与验证要求。
 
 ## 使用方法
 
@@ -58,7 +59,7 @@
 
 ## 致谢（Acknowledgements）
 
-本指南参考了以下仓库的 agent 指令：
+本指南参考了以下仓库的 agent 指令与技能：
 
 - [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
 - [anomalyco/opencode](https://github.com/anomalyco/opencode)
@@ -66,3 +67,7 @@
 - [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code)
 - [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - [openclaw/openclaw](https://github.com/openclaw/openclaw)
+- [wanshuiyin/HERO-Anti-OverDefense — 范围约束](https://github.com/wanshuiyin/HERO-Anti-OverDefense/blob/main/RULES.md)
+- [6Kmfi6HP/avoid-overkill — 工程规则](https://github.com/6Kmfi6HP/avoid-overkill/blob/main/skills/avoid-overkill/SKILL.md)
+- [klarkxy/no-stop-gpt — 适度复杂度与必要保障](https://github.com/klarkxy/no-stop-gpt/blob/main/skills/no-stop-gpt/SKILL.md)
+- [lmy375/oh-no-slop — Python 规则](https://github.com/lmy375/oh-no-slop/blob/main/rules/cn/py.md)
