@@ -27,6 +27,7 @@
 2. **以有效验证支持完成结论。** 检查必须能证明目标行为成立。
 3. **尊重授权并保护已有工作。** 操作应在获准范围内，保留用户和协作者的已有改动。
 4. **减少无依据的防御代码。** 防护机制以当前契约或可信的可达失败路径为依据，保留必要的安全、数据完整性、恢复、兼容与验证要求。
+5. **保持实现直接、易读。** 复用适用的 API，采用精确的类型推断；契约或清晰度需要时，保留显式类型、命名与中间步骤。简化表达式时保持求值语义。
 
 ## 使用方法
 
@@ -62,7 +63,7 @@
 本指南参考了以下仓库的 agent 指令与技能：
 
 - [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
-- [anomalyco/opencode](https://github.com/anomalyco/opencode)
+- [anomalyco/opencode — 通用原则](https://github.com/anomalyco/opencode/blob/dev/AGENTS.md#general-principles)
 - [earendil-works/pi](https://github.com/earendil-works/pi)
 - [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code)
 - [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)

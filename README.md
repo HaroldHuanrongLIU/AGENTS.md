@@ -27,6 +27,7 @@ Simple tasks can proceed with focused checks. More complex or consequential work
 2. **Support completion with meaningful verification.** Checks must demonstrate that the intended behavior works.
 3. **Respect authorization and protect existing work.** Keep actions within the approved scope and preserve user and collaborator changes.
 4. **Reduce unjustified defensive code.** Base protective mechanisms on current contracts or credible, reachable failure paths; preserve required security, data integrity, recovery, compatibility, and verification.
+5. **Keep implementation direct and readable.** Reuse suitable APIs and use precise type inference; retain explicit types, names, and intermediate steps where contracts or clarity require them. Preserve evaluation semantics when simplifying expressions.
 
 ## How to use it
 
@@ -62,7 +63,7 @@ When changing the general guide, update both language versions and compare each 
 This guide draws on agent instructions and skills in the following repositories:
 
 - [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
-- [anomalyco/opencode](https://github.com/anomalyco/opencode)
+- [anomalyco/opencode — General Principles](https://github.com/anomalyco/opencode/blob/dev/AGENTS.md#general-principles)
 - [earendil-works/pi](https://github.com/earendil-works/pi)
 - [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code)
 - [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
