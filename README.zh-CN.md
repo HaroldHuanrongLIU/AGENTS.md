@@ -21,32 +21,11 @@
 
 简单任务可以直接执行并做针对性检查。更复杂或影响更大的工作需要明确计划、更充分的证据，以及必要的恢复安排。专项规则仅在对应场景出现时生效。
 
-## 六份参考来源
-
-本指南依据下表链接的参考快照综合整理，这些快照保存在 Git 历史中。`ref/` 目录已不再跟踪。上游文档可能已在收集后发生变化。每份参考均包含英文文档和中文译文。
-
-| 参考 | 历史文档 | 上游 | 主要借鉴内容 |
-| --- | --- | --- | --- |
-| Karpathy 风格指南 | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/karpathy/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/karpathy/AGENTS.zh-CN.md) | 未记录原始上游地址 | 明确假设、聚焦改动、避免不必要的复杂度，以及可验证的目标 |
-| OpenCode | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/opencode/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/opencode/AGENTS.zh-CN.md) | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 在负责的边界校验、有意义的抽象、生成产物，以及验证真实实现的测试 |
-| Pi | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/pi/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/pi/AGENTS.zh-CN.md) | [earendil-works/pi](https://github.com/earendil-works/pi) | 共享工作区保护、精确暂存、依赖与安装安全，以及具体清楚的沟通 |
-| Kimi Code | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/kimi-code/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/kimi-code/AGENTS.zh-CN.md) | [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code) | 行为清单、消费者与兼容性检查、提示词即行为，以及有明确范围的审查 |
-| Hermes | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/hermes/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/hermes/AGENTS.zh-CN.md) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 核实原始设计意图、行为契约测试，以及局部指令导航 |
-| OpenClaw | [English](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/openclaw/AGENTS.md) · [中文](https://github.com/HaroldHuanrongLIU/AGENTS.md/blob/0b011181806c16e909106b76df0f0e0294bade14/ref/openclaw/AGENTS.zh-CN.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | 授权范围内的执行与恢复、明确职责归属、完整迁移、有效验证，以及停止条件 |
-
-“Karpathy 风格”用于标识本集合中的这份本地参考，仓库尚未记录其原始上游地址。[useless/](useless/) 中的早期参考不属于当前综合整理所采用的六份来源。
-
 ## 设计原则
 
-1. **通用性和全面性优先。** 覆盖工程任务的完整流程，不要求使用特定语言、框架、操作系统、agent 或发布系统。保留必要条件和例外，不为任意篇幅限制牺牲内容。
-2. **流程与任务相匹配。** 根据复杂度、影响和风险应用计划、验证、审查与恢复要求。常规可逆选择可以自主处理；会产生重要后果且尚未解决的歧义需要澄清。
-3. **做最小完整改动。** 覆盖受影响的调用方、契约、测试和文档，同时保留无关工作。根据职责与实际价值判断抽象，根据真实承诺判断兼容义务。
-4. **用相关证据验证行为。** 检查“原问题仍然存在时，这项验证是否也能通过”。区分实现缺陷、错误的测试预期、环境失败和有意的契约变化。复用有效证据，在任务和必要检查完成后结束。
-5. **尊重授权和工作归属。** 保护用户及协作者的改动，承认已有有效授权，让新的副作用保持在批准范围内。外部操作结果不确定时，先核实再重试。
-6. **通过适用条件消解差异。** 六份参考在导入、注释、依赖版本、rebase、兼容性和测试方面存在不同规定。通用指南提炼判断标准，项目专属选择由对应项目规则决定。
-7. **让规则可维护。** 每条规则有一个权威维护位置，局部约束放在其适用范围附近，专项流程具有明确触发条件。两种语言版本保持语义一致。
-
-项目专属路径、版本、命令、风格偏好、架构机制和发布政策保留在参考资料中，不提升为普遍适用的强制要求。
+1. **改动聚焦且完整。** 避免无关修改，同时覆盖必要的调用方、契约、测试和文档。
+2. **以有效验证支持完成结论。** 检查必须能证明目标行为成立。
+3. **尊重授权并保护已有工作。** 操作应在获准范围内，保留用户和协作者的已有改动。
 
 ## 使用方法
 
@@ -61,7 +40,7 @@
 
 复制前先阅读已有指令。如果目标项目已经有 AGENTS.md，应合并相关规则，而不是直接覆盖文件。保留项目实际的构建与测试要求、架构约束和授权政策，并明确处理重叠或冲突的规则。
 
-补充项目专属约束，以及指向权威配置或流程文档的入口。某个目录或子系统的规则应放在对应局部指南中。六个参考目录用于研究对比，不应作为整套指令同时启用到目标项目。
+项目具体要求由对应项目规则确定。补充项目专属约束，以及指向权威配置或流程文档的入口。某个目录或子系统的规则应放在对应局部指南中。
 
 ### 3. 配置 agent 读取指南
 
@@ -71,18 +50,19 @@
 
 ### 4. 用实际任务检查效果
 
-先从小任务开始，检查 agent 是否识别了预期结果、尊重已有工作、完成了聚焦且完整的改动，并报告了有意义的验证。对于更大的任务，还应检查契约保留、协作、恢复和完成条件。依据具体失败或反复出现的歧义调整规则。
-
-## 仓库结构
-
-| 路径 | 用途 |
-| --- | --- |
-| [AGENTS.md](AGENTS.md) | 英文通用指南 |
-| [AGENTS.zh-CN.md](AGENTS.zh-CN.md) | 对应中文指南 |
-| [README.md](README.md)、[README.zh-CN.md](README.zh-CN.md) | 中英文项目介绍与使用说明 |
-| [ref/](https://github.com/HaroldHuanrongLIU/AGENTS.md/tree/0b011181806c16e909106b76df0f0e0294bade14/ref) | 历史来源快照及其中文译文，不包含在新克隆的工作区中 |
-| [useless/](useless/) | 未纳入当前综合整理的早期参考 |
+先用一个小任务检查 agent 的目标理解、改动范围和验证结果，再根据实际问题调整指南。
 
 ## 文档维护
 
-修改通用指南时，同步更新两种语言版本，逐条比较规则的范围、强度、条件、例外和交叉引用。将指令修改视为行为变更。README 应与指南及实际参考集合保持一致，参考快照的维护与综合指南的修改分别处理。
+修改通用指南时，同步更新两种语言版本，逐条比较规则的范围、强度、条件、例外和交叉引用。将指令修改视为行为变更。README 应与指南保持一致。
+
+## 致谢（Acknowledgements）
+
+本指南参考了以下仓库的 agent 指令：
+
+- [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+- [anomalyco/opencode](https://github.com/anomalyco/opencode)
+- [earendil-works/pi](https://github.com/earendil-works/pi)
+- [MoonshotAI/kimi-code](https://github.com/MoonshotAI/kimi-code)
+- [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
+- [openclaw/openclaw](https://github.com/openclaw/openclaw)
